@@ -323,7 +323,7 @@ do { \
 #define DASH_SUFFIX ""
 #endif
 
-#define RTL8125_VERSION "9.003.04" NAPI_SUFFIX DASH_SUFFIX
+#define RTL8125_VERSION "9.003.05" NAPI_SUFFIX DASH_SUFFIX
 #define MODULENAME "r8125"
 #define PFX MODULENAME ": "
 
@@ -1761,7 +1761,7 @@ enum mcfg {
 #define NIC_RAMCODE_VERSION_CFG_METHOD_2 (0x0b11)
 #define NIC_RAMCODE_VERSION_CFG_METHOD_3 (0x0b33)
 #define NIC_RAMCODE_VERSION_CFG_METHOD_4 (0x0b17)
-#define NIC_RAMCODE_VERSION_CFG_METHOD_5 (0x0b29)
+#define NIC_RAMCODE_VERSION_CFG_METHOD_5 (0x0b34)
 
 //hwoptimize
 #define HW_PATCH_SOC_LAN (BIT_0)
@@ -1802,6 +1802,7 @@ void rtl8125_dash2_enable_rx(struct rtl8125_private *tp);
 void rtl8125_hw_disable_mac_mcu_bps(struct net_device *dev);
 
 #define HW_SUPPORT_CHECK_PHY_DISABLE_MODE(_M)        ((_M)->HwSuppCheckPhyDisableModeVer > 0 )
+#define HW_HAS_WRITE_PHY_MCU_RAM_CODE(_M)        (((_M)->HwHasWrRamCodeToMicroP == TRUE) ? 1 : 0)
 
 #if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,34)
 #define netdev_mc_count(dev) ((dev)->mc_count)
