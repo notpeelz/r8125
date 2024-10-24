@@ -7678,7 +7678,7 @@ static const struct ethtool_ops rtl8125_ethtool_ops = {
         .get_ts_info        = ethtool_op_get_ts_info,
 #endif //ENABLE_PTP_SUPPORT
 #endif //LINUX_VERSION_CODE >= KERNEL_VERSION(3,5,0)
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,6,0)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(3,6,0) && LINUX_VERSION_CODE < KERNEL_VERSION(6,7,0)
         .get_eee = rtl_ethtool_get_eee,
         .set_eee = rtl_ethtool_set_eee,
 #endif /* LINUX_VERSION_CODE >= KERNEL_VERSION(3,6,0) */
